@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity", "fullTextSearch", "metrics", "tracing"]
+}
+
+datasource db {
+  provider             = "postgres"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+enum JourneyStatus {
+  INIT
+  SUBMITTED
+  COMPLETED
+  REJECTED
+}
+
+model Journey {
+  journeyNumber String   @id @default(uuid()) @map("journey_number")
+  policyNumber  String?  @unique() @map("policy_number")
+  firstName     String   @map("first_name")
+  lastName      String   @map("last_name")
+  email         String
+  dateOfBirth   DateTime @map("date_of_birth")
+
+  // Meta
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
