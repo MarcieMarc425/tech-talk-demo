@@ -33,18 +33,26 @@
     "node": ">=16"
   },
   "dependencies": {
+    "@anatine/zod-mock": "^3.5.6",
+    "@anatine/zod-nestjs": "^1.7.3",
+    "@anatine/zod-openapi": "^1.9.7",
     "@emotion/react": "11.10.0",
     "@emotion/server": "11.10.0",
     "@emotion/styled": "11.10.0",
+    "@faker-js/faker": "^7.4.0",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.0.5",
     "@prisma/client": "^4.2.1",
     "@swc/helpers": "~0.3.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
     "core-js": "^3.6.5",
     "nestjs-pino": "^3.1.1",
-    "nestjs-zod": "^1.1.2",
     "next": "12.2.3",
+    "openapi3-ts": "^3.0.0",
     "pino-http": "^8.2.0",
     "pino-pretty": "^9.0.0",
     "react": "18.2.0",
@@ -52,7 +60,8 @@
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zod": "^3.18.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
