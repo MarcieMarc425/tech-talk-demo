@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "tech-talk-demo",
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "develop"
   },
   "implicitDependencies": {
     "package.json": {
@@ -24,5 +24,18 @@
       "dependsOn": ["^build"]
     }
   },
-  "defaultProject": "server"
+  "defaultProject": "server",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  }
 }

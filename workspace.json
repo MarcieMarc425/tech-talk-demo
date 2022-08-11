@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "data-access-shared": "libs/data-access/shared",
+    "frontend": "apps/frontend",
     "server": "apps/server"
   }
 }
