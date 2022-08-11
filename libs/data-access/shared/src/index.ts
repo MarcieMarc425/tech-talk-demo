@@ -1,1 +1,2 @@
-export * from './lib/data-access-shared';
+export * from './lib/dtos';
+export * from './lib/types';

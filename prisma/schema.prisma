@@ -20,16 +20,18 @@ enum JourneyStatus {
 }
 
 model Journey {
-  journeyNumber String   @id @default(uuid()) @map("journey_number")
-  policyNumber  String?  @unique() @map("policy_number")
-  firstName     String   @map("first_name")
-  lastName      String   @map("last_name")
+  id            String        @id @default(cuid())
+  journeyNumber String        @unique() @map("journey_number")
+  policyNumber  String?       @unique() @map("policy_number")
+  firstName     String        @map("first_name")
+  lastName      String        @map("last_name")
   email         String
-  dateOfBirth   DateTime @map("date_of_birth")
+  status        JourneyStatus @default(INIT)
+  dateOfBirth   DateTime      @map("date_of_birth")
 
   // Meta
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  @@map("users")
+  @@map("journeys")
 }

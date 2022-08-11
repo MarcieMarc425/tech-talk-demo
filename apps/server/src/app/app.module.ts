@@ -7,10 +7,14 @@ import os from 'os';
 
 import { DEFAULT_API_VERSION } from '../constants';
 import { type Config, configSchema } from '../modules/config/configSchema';
+import { JourneyModule } from '../modules/journey/journey.module';
+import { PrismaModule } from '../providers/prisma';
 import { getLogLevel } from '../utils';
 
 @Module({
   imports: [
+    JourneyModule,
+    PrismaModule,
     LoggerModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
